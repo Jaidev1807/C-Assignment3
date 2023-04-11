@@ -16,7 +16,7 @@ namespace C_Assignment3.Controllers
 
             return View();
         }
-
+      
 
         //GET : /Teacher/List
         public ActionResult List(string SearchKey = null)
@@ -25,7 +25,7 @@ namespace C_Assignment3.Controllers
             IEnumerable<Teacher> Teachers = controller.ListTeachers(SearchKey);
             return View(Teachers);
         }
-
+     
         //GET : /Teacher/Show/{id}
         public ActionResult Show(int id)
         {
@@ -34,7 +34,7 @@ namespace C_Assignment3.Controllers
 
             return View(NewTeacher);
         }
-
+ 
         //GET : /Teacher/DeleteConfirm/{id}
         public ActionResult DeleteConfirm(int id)
         {
@@ -43,7 +43,7 @@ namespace C_Assignment3.Controllers
 
             return View(NewTeacher);
         }
-
+ 
         //POST : /Teacher/Delete/{id}
         [HttpPost]
         public ActionResult Delete(int id)
@@ -52,14 +52,12 @@ namespace C_Assignment3.Controllers
             controller.DeleteTeacher(id);
             return RedirectToAction("List");
         }
-
-        //GET : /Teacher/New
+        
         public ActionResult New()
         {
             return View();
         }
-
-        //POST : /Teacher/Create
+     
         [HttpPost]
         public ActionResult Create(string TeacherFName, string TeacherLName, string EmployeeNumber, decimal Salary)
         {
